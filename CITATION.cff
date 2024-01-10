@@ -1,0 +1,31 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: DRC Election 2023
+message: >-
+  If you use this dataset, please cite it using the
+  metadata from this file.
+type: dataset
+authors:
+  - given-names: Bernard
+    name-particle: Tshabu
+    family-names: Ngandu
+    email: bernard@devscast.tech
+    affiliation: Devscast Community
+    orcid: 'https://orcid.org/0009-0003-9777-6349'
+repository-code: 'https://github.com/bernard-ng/drc-election-2023'
+repository: >-
+  https://www.kaggle.com/datasets/bernardngandu/rdc-election-2023
+abstract: >-
+  This dataset contains the results of the 2023 presidential elections in the
+  Democratic Republic of Congo.
+keywords:
+  - elections
+  - datasets
+  - DRC
+  - politics
+  - NLP
+license: CC-BY-NC-SA-4.0
+version: 1.0.0
+date-released: '2023-11-16'
