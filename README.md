@@ -25,7 +25,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## contributors
 
 <a href="https://github.com/bernard-ng/drc-election-2023/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=bernard/drc-election-2023"/>
+  <img src="https://contrib.rocks/image?repo=bernard-ng/drc-election-2023"/>
 </a>
 
 ## Acknowledgment:
