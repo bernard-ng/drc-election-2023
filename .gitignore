@@ -1,0 +1,9 @@
+.DS_Store
+.idea/
+.vscode/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+*.pyc
+.env
