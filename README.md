@@ -27,10 +27,10 @@ Dataset is available on Hugging Face Datasets: [drc-elections-2023](https://hugg
 ```tex
 @misc {bernard_ngandu_2025,
 	author       = { {Bernard Ngandu} },
-	title        = { drc-elections-2023 (Revision 7f14d9e) },
+	title        = { drc-elections-2023 (Revision dcb13ea) },
 	year         = 2025,
 	url          = { https://huggingface.co/datasets/bernard-ng/drc-elections-2023 },
-	doi          = { 10.57967/hf/4533 },
+	doi          = { 10.57967/hf/4635 },
 	publisher    = { Hugging Face }
 }
 ```
