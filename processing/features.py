@@ -69,7 +69,43 @@ def create_demographics():
     )
 
 
+def create_places():
+    voting_sites = pd.read_csv(os.path.join(MAP_DATA_DIR, 'voting_sites.csv'), usecols=['voting_site_id', 'district_id', 'voting_site_name'])
+    districts = pd.read_csv(os.path.join(MAP_DATA_DIR, 'districts.csv'), usecols=['district_id', 'province_id', 'district'])
+    provinces = pd.read_csv(os.path.join(FEATURED_DATA_DIR, 'provinces.csv'), usecols=['province_id', 'province'])
+
+    df = voting_sites.merge(districts, on='district_id').merge(provinces, on='province_id')
+    (df[['voting_site_id', 'district_id', 'province_id', 'voting_site_name', 'district', 'province']]
+     .sort_values(by='province_id')
+     .to_csv(os.path.join(FEATURED_DATA_DIR, 'places.csv'), index=False))
+
+
+def pivoted_results_by_province():
+    results = pd.read_csv(os.path.join(MAP_DATA_DIR, 'results_by_province.csv'), usecols=['province_id', 'candidate_id', 'candidate_votes'])
+
+    df = results.pivot_table(index='province_id', columns='candidate_id', values='candidate_votes', fill_value=0)
+    df = df.astype(int)
+    df.reset_index(inplace=True)
+    df.sort_values(by='province_id').to_csv(
+        os.path.join(FEATURED_DATA_DIR, 'pivoted_results_by_province.csv'), index=False
+    )
+
+
+def pivoted_results_by_voting_site():
+    results = pd.read_csv(os.path.join(MAP_DATA_DIR, 'results_by_voting_site.csv'), usecols=['voting_site_id', 'candidate_id', 'candidate_votes'])
+
+    df = results.pivot_table(index='voting_site_id', columns='candidate_id', values='candidate_votes', fill_value=0)
+    df = df.astype(int)
+    df.reset_index(inplace=True)
+    df.sort_values(by='voting_site_id').to_csv(
+        os.path.join(FEATURED_DATA_DIR, 'pivoted_results_by_voting_site.csv'), index=False
+    )
+
+
 if __name__ == '__main__':
     create_provinces()
     create_candidates()
     create_demographics()
+    create_places()
+    pivoted_results_by_province()
+    pivoted_results_by_voting_site()
